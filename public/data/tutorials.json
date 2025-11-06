@@ -1,0 +1,22 @@
+{
+  "topics": [
+    {
+      "id": "intro",
+      "title": "Giriş",
+      "description": "Python, güçlü ve okunabilir bir programlama dilidir.",
+      "code": "print('Merhaba Python!')"
+    },
+    {
+      "id": "variables",
+      "title": "Değişkenler",
+      "description": "Değişkenler verileri saklamak için kullanılır.",
+      "code": "x = 10\ny = 'Selam'\nprint(x, y)"
+    },
+    {
+      "id": "loops",
+      "title": "Döngüler",
+      "description": "Döngüler belirli işlemleri tekrarlamak için kullanılır.",
+      "code": "for i in range(3):\n    print('Döngü:', i)"
+    }
+  ]
+}
