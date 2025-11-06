@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/ui/app-sidebar";
+import ContentArea from "@/components/ContentArea";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

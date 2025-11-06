@@ -1,22 +1,123 @@
-{
-  "topics": [
-    {
-      "id": "intro",
-      "title": "Giriş",
-      "description": "Python, güçlü ve okunabilir bir programlama dilidir.",
-      "code": "print('Merhaba Python!')"
-    },
-    {
-      "id": "variables",
-      "title": "Değişkenler",
-      "description": "Değişkenler verileri saklamak için kullanılır.",
-      "code": "x = 10\ny = 'Selam'\nprint(x, y)"
-    },
-    {
-      "id": "loops",
-      "title": "Döngüler",
-      "description": "Döngüler belirli işlemleri tekrarlamak için kullanılır.",
-      "code": "for i in range(3):\n    print('Döngü:', i)"
-    }
-  ]
-}
+[
+  {
+    "id": "intro",
+    "title": "Giriş",
+    "url": "/intro",
+    "cardValues": [
+      {
+        "description": "Python, güçlü, okunabilir ve çok yönlü bir programlama dilidir. Basit sözdizimi sayesinde yeni başlayanlar için idealdir.",
+        "code": "print('Merhaba Python!')\nprint('Python öğrenmeye hazır mısın?')"
+      },
+      {
+        "description": "print() fonksiyonu ekrana yazdırmak için kullanılır.",
+        "code": "print('Bu bir çıktı örneğidir.')\nprint('3 + 5 =', 3 + 5)"
+      }
+    ]
+  },
+  {
+    "id": "variables",
+    "title": "Değişkenler",
+    "url": "/variables",
+    "cardValues": [
+      {
+        "description": "Değişkenler verileri saklamak için kullanılır. Tür belirtmeye gerek yoktur.",
+        "code": "isim = 'Ahmet'\nyaş = 25\nprint(isim, 'adlı kişi', yaş, 'yaşında.')"
+      },
+      {
+        "description": "Değişkenlerin değerleri sonradan değiştirilebilir.",
+        "code": "x = 10\nprint('İlk değer:', x)\nx = 20\nprint('Yeni değer:', x)"
+      },
+      {
+        "description": "Birden fazla değişken aynı anda tanımlanabilir.",
+        "code": "a, b, c = 1, 2, 3\nprint(a, b, c)"
+      }
+    ]
+  },
+  {
+    "id": "datatypes",
+    "title": "Veri Tipleri",
+    "url": "/datatypes",
+    "cardValues": [
+      {
+        "description": "Python'da farklı veri türleri vardır: int, float, string, bool vb.",
+        "code": "x = 10       # int\ny = 3.14     # float\nz = 'Python' # string\nprint(type(x), type(y), type(z))"
+      },
+      {
+        "description": "Liste, Tuple ve Sözlük gibi koleksiyon türleri de vardır.",
+        "code": "liste = [1, 2, 3]\ndemet = (4, 5, 6)\nsozluk = {'ad': 'Ayşe', 'yaş': 22}\nprint(liste[0], demet[1], sozluk['ad'])"
+      }
+    ]
+  },
+  {
+    "id": "operators",
+    "title": "Operatörler",
+    "url": "/operators",
+    "cardValues": [
+      {
+        "description": "Aritmetik operatörler: +, -, *, /, //, %, **",
+        "code": "a = 10\nb = 3\nprint(a + b, a - b, a * b, a / b, a % b)"
+      },
+      {
+        "description": "Karşılaştırma operatörleri: ==, !=, >, <, >=, <=",
+        "code": "x = 5\ny = 8\nprint(x > y, x == y, x != y)"
+      },
+      {
+        "description": "Mantıksal operatörler: and, or, not",
+        "code": "print(True and False)\nprint(True or False)\nprint(not True)"
+      }
+    ]
+  },
+  {
+    "id": "conditionals",
+    "title": "Koşullar (if-else)",
+    "url": "/conditionals",
+    "cardValues": [
+      {
+        "description": "if yapısı, belirli bir koşul sağlandığında kodun çalışmasını sağlar.",
+        "code": "sayi = 10\nif sayi > 0:\n    print('Pozitif sayı')"
+      },
+      {
+        "description": "if-elif-else zinciri birden fazla durumu kontrol eder.",
+        "code": "sayi = 0\nif sayi > 0:\n    print('Pozitif')\nelif sayi == 0:\n    print('Sıfır')\nelse:\n    print('Negatif')"
+      }
+    ]
+  },
+  {
+    "id": "loops",
+    "title": "Döngüler",
+    "url": "/loops",
+    "cardValues": [
+      {
+        "description": "for döngüsü belirli sayıda tekrarlamak için kullanılır.",
+        "code": "for i in range(5):\n    print('Tekrar:', i)"
+      },
+      {
+        "description": "while döngüsü koşul doğru olduğu sürece çalışır.",
+        "code": "x = 0\nwhile x < 3:\n    print('x:', x)\n    x += 1"
+      },
+      {
+        "description": "break ve continue ile döngüyü kontrol edebilirsin.",
+        "code": "for i in range(5):\n    if i == 2:\n        continue  # 2'yi atla\n    if i == 4:\n        break    # Döngüyü durdur\n    print('i:', i)"
+      }
+    ]
+  },
+  {
+    "id": "functions",
+    "title": "Fonksiyonlar",
+    "url": "/functions",
+    "cardValues": [
+      {
+        "description": "Fonksiyonlar, belirli bir görevi yerine getiren kod bloklarıdır.",
+        "code": "def selamla():\n    print('Merhaba!')\n\nselamla()"
+      },
+      {
+        "description": "Parametre alan fonksiyon örneği.",
+        "code": "def topla(a, b):\n    return a + b\n\nprint(topla(5, 7))"
+      },
+      {
+        "description": "Varsayılan parametreli fonksiyon.",
+        "code": "def selam(isim='Ziyaretçi'):\n    print('Merhaba', isim)\n\nselam()\nselam('Ali')"
+      }
+    ]
+  }
+]
