@@ -1,5 +1,3 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
 import Link from "next/link";
 
 import {
@@ -8,9 +6,11 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarFooter,
 } from "@/components/ui/sidebar";
 
 import tutorials from "@/../public/data/tutorials.json";
@@ -46,15 +46,21 @@ export function AppSidebar({ menuItems }) {
 
   return (
     <Sidebar>
+      <SidebarHeader className="text-2xl font-bold py-6 px-4">
+        Python Tutorial{" "}
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          {/* <SidebarGroupLabel>Python Tutorial</SidebarGroupLabel> */}
           <SidebarGroupContent>
             <SidebarMenu>
               {tutorials.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link href={item.url}>
+                    <Link
+                      href={item.url}
+                      className="block text-lg py-3 px-4 hover:bg-gray-100 rounded-md transition-colors"
+                    >
                       {/* <item.icon /> */}
                       <span>{item.title}</span>
                     </Link>
@@ -65,6 +71,9 @@ export function AppSidebar({ menuItems }) {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      {/* <SidebarFooter>
+        <p>erayagarer</p>
+      </SidebarFooter> */}
     </Sidebar>
   );
 }

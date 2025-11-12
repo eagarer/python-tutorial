@@ -4,6 +4,7 @@ import tutorials from "@/../public/data/tutorials.json";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import python from "react-syntax-highlighter/dist/esm/languages/hljs/python";
 import docco from "react-syntax-highlighter/dist/esm/styles/hljs/docco";
+import OutputToggle from "@/components/OutputToggle";
 
 SyntaxHighlighter.registerLanguage("python", python);
 
@@ -17,9 +18,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default async function page({ params }) {
-  console.log("params -->", params);
+export async function generateStaticParams() {
+  return tutorials.map((item) => ({
+    content: item.id,
+  }));
+}
 
+export default async function page({ params }) {
   // const slug = Array.isArray(params.content)
   //   ? params.content[0]
   //   : params.content;
@@ -27,46 +32,48 @@ export default async function page({ params }) {
   // console.log("slug →", slug);
   const resolvedParams = await params;
 
-  // console.log("resolvedParams →", resolvedParams);
-
   const slug = Array.isArray(resolvedParams.content)
     ? resolvedParams.content[0]
     : resolvedParams.content;
 
-  // console.log("slug →", slug);
-
-  // console.log("t -->", tutorials[0].url);
-
   const pageData = tutorials.find((p) => p.id === slug);
 
-  // console.log("page -->", page);
+  // const [showOutput, setShowOutput] = useState(
+  //   new Array(pageData?.cardValues?.length || 0).fill(false)
+  // );
+
+  // const toggleOutput = (idx) => {
+  //   const newShow = [...showOutput];
+  //   newShow[idx] = !newShow[idx];
+  //   setShowOutput(newShow);
+  // };
 
   return (
-    <div>
+    <div className="w-full">
       {pageData?.cardValues?.map((card, idx) => (
-        <Card key={idx} className="ml-6 my-4 shadow-md">
+        <Card key={idx} className="m-6 shadow-md">
           <CardHeader>
-            <CardTitle>Card Title</CardTitle>
+            {/* <CardTitle>Card Title</CardTitle> */}
             <CardDescription>{card.description}</CardDescription>
-            <CardAction>Card Action</CardAction>
+            {/* <CardAction>Card Action</CardAction> */}
           </CardHeader>
           <CardContent>
             {/* <p>Card Content</p> */}
             <SyntaxHighlighter
-            language="python"
-            style={docco}
-            customStyle={{
-              borderRadius: "0.5rem",
-              fontSize: "0.9rem",
-              padding: "1rem",
-              margin: "1rem",
-            }}
-          >
-            {card.code ?? ""}
-          </SyntaxHighlighter>
+              language="python"
+              style={docco}
+              customStyle={{
+                borderRadius: "0.5rem",
+                fontSize: "0.9rem",
+                padding: "1rem",
+                margin: "1rem",
+              }}
+            >
+              {card.code ?? ""}
+            </SyntaxHighlighter>
           </CardContent>
           <CardFooter>
-            <p>Card Footer</p>
+            <OutputToggle output={card.output} />
           </CardFooter>
         </Card>
       ))}

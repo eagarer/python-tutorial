@@ -27,8 +27,21 @@ export default function RootLayout({ children }) {
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider>
-          <AppSidebar />
-          <main>
+          <div
+            className="flex h-screen"
+            // style={{ display: "flex", height: "100vh" }}
+          >
+            <AppSidebar className="w-1/5" />
+          </div>
+          <main
+            className="w-4/5 flex justify-center overflow-auto"
+            // style={{
+            //   flex: 1, // kalan tüm alanı kaplar
+            //   display: "flex",
+            //   flexDirection: "column",
+            //   overflow: "auto", // içeriğin taşması durumunda scroll ekler
+            // }}
+          >
             <SidebarTrigger />
             {children}
           </main>

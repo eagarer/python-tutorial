@@ -5,12 +5,19 @@
     "url": "/intro",
     "cardValues": [
       {
-        "description": "Python, güçlü, okunabilir ve çok yönlü bir programlama dilidir. Basit sözdizimi sayesinde yeni başlayanlar için idealdir.",
-        "code": "print('Merhaba Python!')\nprint('Python öğrenmeye hazır mısın?')"
+        "description": "Python güçlü, okunabilir ve çok yönlü bir programlama dilidir.",
+        "code": "print('Merhaba Python!')\nprint('Python öğrenmeye hazır mısın?')",
+        "output": "Merhaba Python!\nPython öğrenmeye hazır mısın?"
       },
       {
         "description": "print() fonksiyonu ekrana yazdırmak için kullanılır.",
-        "code": "print('Bu bir çıktı örneğidir.')\nprint('3 + 5 =', 3 + 5)"
+        "code": "print('Bu bir çıktı örneğidir.')\nprint('3 + 5 =', 3 + 5)",
+        "output": "Bu bir çıktı örneğidir.\n3 + 5 = 8"
+      },
+      {
+        "description": "Yorum satırları '#' ile başlar ve kodun çalışmasını etkilemez.",
+        "code": "# Bu bir yorum satırıdır\nprint('Yorum satırları kodu açıklamak için kullanılır.')",
+        "output": "Yorum satırları kodu açıklamak için kullanılır."
       }
     ]
   },
@@ -20,16 +27,14 @@
     "url": "/variables",
     "cardValues": [
       {
-        "description": "Değişkenler verileri saklamak için kullanılır. Tür belirtmeye gerek yoktur.",
-        "code": "isim = 'Ahmet'\nyaş = 25\nprint(isim, 'adlı kişi', yaş, 'yaşında.')"
-      },
-      {
-        "description": "Değişkenlerin değerleri sonradan değiştirilebilir.",
-        "code": "x = 10\nprint('İlk değer:', x)\nx = 20\nprint('Yeni değer:', x)"
+        "description": "Değişkenler verileri saklamak için kullanılır ve değerleri sonradan değiştirilebilir.",
+        "code": "x = 10\nprint('İlk değer:', x)\nx = 20\nprint('Yeni değer:', x)",
+        "output": "İlk değer: 10\nYeni değer: 20"
       },
       {
         "description": "Birden fazla değişken aynı anda tanımlanabilir.",
-        "code": "a, b, c = 1, 2, 3\nprint(a, b, c)"
+        "code": "a, b, c = 1, 2, 3\nprint(a, b, c)",
+        "output": "1 2 3"
       }
     ]
   },
@@ -39,12 +44,14 @@
     "url": "/datatypes",
     "cardValues": [
       {
-        "description": "Python'da farklı veri türleri vardır: int, float, string, bool vb.",
-        "code": "x = 10       # int\ny = 3.14     # float\nz = 'Python' # string\nprint(type(x), type(y), type(z))"
+        "description": "Python'da temel veri tipleri: int, float, str, bool. Her biri farklı veri türlerini temsil eder.",
+        "code": "x = 10\ny = 3.14\nz = 'Python'\nb = True\nprint(type(x), type(y), type(z), type(b))",
+        "output": "<class 'int'> <class 'float'> <class 'str'> <class 'bool'>"
       },
       {
-        "description": "Liste, Tuple ve Sözlük gibi koleksiyon türleri de vardır.",
-        "code": "liste = [1, 2, 3]\ndemet = (4, 5, 6)\nsozluk = {'ad': 'Ayşe', 'yaş': 22}\nprint(liste[0], demet[1], sozluk['ad'])"
+        "description": "Listeler sıralı ve değiştirilebilir, Tuple sıralı ama değiştirilemez, Dict anahtar-değer çiftleri ile hızlı erişim sağlar, Set tekrarsız ve sırasızdır.",
+        "code": "liste = [1,2,3]\ndemet = (4,5,6)\nsozluk = {'ad':'Ali'}\nkume = {1,2,3}\nprint(liste, demet, sozluk, kume)",
+        "output": "[1, 2, 3] (4, 5, 6) {'ad': 'Ali'} {1, 2, 3}"
       }
     ]
   },
@@ -55,15 +62,18 @@
     "cardValues": [
       {
         "description": "Aritmetik operatörler: +, -, *, /, //, %, **",
-        "code": "a = 10\nb = 3\nprint(a + b, a - b, a * b, a / b, a % b)"
+        "code": "a = 10\nb = 3\nprint(a + b, a - b, a * b, a / b, a // b, a % b, a ** b)",
+        "output": "13 7 30 3.3333333333333335 3 1 1000"
       },
       {
         "description": "Karşılaştırma operatörleri: ==, !=, >, <, >=, <=",
-        "code": "x = 5\ny = 8\nprint(x > y, x == y, x != y)"
+        "code": "x = 5\ny = 8\nprint(x == y, x != y, x > y, x < y)",
+        "output": "False True False True"
       },
       {
-        "description": "Mantıksal operatörler: and, or, not",
-        "code": "print(True and False)\nprint(True or False)\nprint(not True)"
+        "description": "Mantıksal operatörler: and, or, not. 'and' tümü doğruysa True döner, 'or' en az biri doğruysa True döner.",
+        "code": "a = True\nb = False\nprint(a and b)\nprint(a or b)\nprint(not a)",
+        "output": "False\nTrue\nFalse"
       }
     ]
   },
@@ -73,12 +83,19 @@
     "url": "/conditionals",
     "cardValues": [
       {
-        "description": "if yapısı, belirli bir koşul sağlandığında kodun çalışmasını sağlar.",
-        "code": "sayi = 10\nif sayi > 0:\n    print('Pozitif sayı')"
+        "description": "if yapısı koşul doğruysa çalışır.",
+        "code": "sayi = 10\nif sayi > 0:\n    print('Pozitif')",
+        "output": "Pozitif"
       },
       {
-        "description": "if-elif-else zinciri birden fazla durumu kontrol eder.",
-        "code": "sayi = 0\nif sayi > 0:\n    print('Pozitif')\nelif sayi == 0:\n    print('Sıfır')\nelse:\n    print('Negatif')"
+        "description": "if-elif-else birden fazla durumu kontrol eder.",
+        "code": "sayi = 0\nif sayi > 0:\n    print('Pozitif')\nelif sayi == 0:\n    print('Sıfır')\nelse:\n    print('Negatif')",
+        "output": "Sıfır"
+      },
+      {
+        "description": "Ternary operator ile tek satırda koşul yazılabilir.",
+        "code": "x = 5\nprint('Pozitif' if x>0 else 'Negatif')",
+        "output": "Pozitif"
       }
     ]
   },
@@ -88,16 +105,19 @@
     "url": "/loops",
     "cardValues": [
       {
-        "description": "for döngüsü belirli sayıda tekrarlamak için kullanılır.",
-        "code": "for i in range(5):\n    print('Tekrar:', i)"
+        "description": "for döngüsü belirli sayıda tekrar eder.",
+        "code": "for i in range(3):\n    print('Tekrar:', i)",
+        "output": "Tekrar: 0\nTekrar: 1\nTekrar: 2"
       },
       {
         "description": "while döngüsü koşul doğru olduğu sürece çalışır.",
-        "code": "x = 0\nwhile x < 3:\n    print('x:', x)\n    x += 1"
+        "code": "x = 0\nwhile x < 3:\n    print('x:', x)\n    x += 1",
+        "output": "x: 0\nx: 1\nx: 2"
       },
       {
-        "description": "break ve continue ile döngüyü kontrol edebilirsin.",
-        "code": "for i in range(5):\n    if i == 2:\n        continue  # 2'yi atla\n    if i == 4:\n        break    # Döngüyü durdur\n    print('i:', i)"
+        "description": "break ve continue ile döngü kontrol edilir.",
+        "code": "for i in range(5):\n    if i == 2:\n        continue\n    if i == 4:\n        break\n    print(i)",
+        "output": "0\n1\n3"
       }
     ]
   },
@@ -107,16 +127,70 @@
     "url": "/functions",
     "cardValues": [
       {
-        "description": "Fonksiyonlar, belirli bir görevi yerine getiren kod bloklarıdır.",
-        "code": "def selamla():\n    print('Merhaba!')\n\nselamla()"
+        "description": "Fonksiyonlar belirli işlemleri tekrar kullanmak için tanımlanır.",
+        "code": "def selamla(isim):\n    print('Merhaba', isim)\nselamla('Ali')",
+        "output": "Merhaba Ali"
       },
       {
-        "description": "Parametre alan fonksiyon örneği.",
-        "code": "def topla(a, b):\n    return a + b\n\nprint(topla(5, 7))"
+        "description": "Fonksiyonlar değer döndürebilir. return ile sonuç alınır.",
+        "code": "def topla(a,b):\n    return a+b\nprint(topla(3,5))",
+        "output": "8"
       },
       {
-        "description": "Varsayılan parametreli fonksiyon.",
-        "code": "def selam(isim='Ziyaretçi'):\n    print('Merhaba', isim)\n\nselam()\nselam('Ali')"
+        "description": "Fonksiyonlarda varsayılan değerler kullanılabilir.",
+        "code": "def selamla(isim='Misafir'):\n    print('Merhaba', isim)\nselamla()\nselamla('Ayşe')",
+        "output": "Merhaba Misafir\nMerhaba Ayşe"
+      }
+    ]
+  },
+  {
+    "id": "modules",
+    "title": "Modüller",
+    "url": "/modules",
+    "cardValues": [
+      {
+        "description": "import ile modül yüklenir ve içindeki fonksiyonlar kullanılabilir.",
+        "code": "import math\nprint(math.sqrt(16))",
+        "output": "4.0"
+      },
+      {
+        "description": "from ... import ... ile sadece gerekli fonksiyon alınabilir.",
+        "code": "from math import pi\nprint(pi)",
+        "output": "3.141592653589793"
+      }
+    ]
+  },
+  {
+    "id": "exceptions",
+    "title": "Hata Yönetimi (Exceptions)",
+    "url": "/exceptions",
+    "cardValues": [
+      {
+        "description": "try-except ile hatalar yakalanır.",
+        "code": "try:\n    10/0\nexcept ZeroDivisionError:\n    print('Sıfıra bölme hatası!')",
+        "output": "Sıfıra bölme hatası!"
+      },
+      {
+        "description": "else ve finally ile ek kontrol sağlanabilir.",
+        "code": "try:\n    print('Çalışıyor')\nexcept:\n    print('Hata')\nelse:\n    print('Hata yok')\nfinally:\n    print('Her zaman çalışır')",
+        "output": "Çalışıyor\nHata yok\nHer zaman çalışır"
+      }
+    ]
+  },
+  {
+    "id": "list_comprehensions",
+    "title": "List Comprehensions",
+    "url": "/list_comprehensions",
+    "cardValues": [
+      {
+        "description": "List comprehension ile listeler kısa yoldan oluşturulur.",
+        "code": "liste = [x*2 for x in range(5)]\nprint(liste)",
+        "output": "[0, 2, 4, 6, 8]"
+      },
+      {
+        "description": "Koşullu list comprehension ile filtreleme yapılabilir.",
+        "code": "ciftler = [x for x in range(10) if x%2==0]\nprint(ciftler)",
+        "output": "[0, 2, 4, 6, 8]"
       }
     ]
   }
