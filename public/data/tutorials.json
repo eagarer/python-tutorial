@@ -144,40 +144,6 @@
     ]
   },
   {
-    "id": "modules",
-    "title": "Modüller",
-    "url": "/modules",
-    "cardValues": [
-      {
-        "description": "import ile modül yüklenir ve içindeki fonksiyonlar kullanılabilir.",
-        "code": "import math\nprint(math.sqrt(16))",
-        "output": "4.0"
-      },
-      {
-        "description": "from ... import ... ile sadece gerekli fonksiyon alınabilir.",
-        "code": "from math import pi\nprint(pi)",
-        "output": "3.141592653589793"
-      }
-    ]
-  },
-  {
-    "id": "exceptions",
-    "title": "Hata Yönetimi (Exceptions)",
-    "url": "/exceptions",
-    "cardValues": [
-      {
-        "description": "try-except ile hatalar yakalanır.",
-        "code": "try:\n    10/0\nexcept ZeroDivisionError:\n    print('Sıfıra bölme hatası!')",
-        "output": "Sıfıra bölme hatası!"
-      },
-      {
-        "description": "else ve finally ile ek kontrol sağlanabilir.",
-        "code": "try:\n    print('Çalışıyor')\nexcept:\n    print('Hata')\nelse:\n    print('Hata yok')\nfinally:\n    print('Her zaman çalışır')",
-        "output": "Çalışıyor\nHata yok\nHer zaman çalışır"
-      }
-    ]
-  },
-  {
     "id": "list_comprehensions",
     "title": "List Comprehensions",
     "url": "/list_comprehensions",
